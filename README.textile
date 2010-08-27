@@ -13,17 +13,15 @@ translated, Facebook will be another place we can be immersed in the language.
 Installation
 
 1. You will need a browser with the ability to run Greasemonky Userscripts.
-This includes "Firefox":http://www.mozilla.com/en-US/firefox/firefox.html ("Add
-on":https://addons.mozilla.org/firefox/addon/748), "Google
-Chrome":http://www.google.com/chrome (No Add on required), "Internet
-Explorer":http://www.microsoft.com/india/windows/internet-explorer/ ("Add
-on":http://www.bhelpuri.net/Trixie/), and "Safari":http://www.apple.com/safari/
-("Add on":http://8-p.info/greasekit/).
+This includes:
+
+ *  "Firefox":http://www.mozilla.com/en-US/firefox/firefox.html ("Add on":https://addons.mozilla.org/firefox/addon/748)
+ * "Google Chrome":http://www.google.com/chrome (No Add on required)
+ * "Internet Explorer":http://www.microsoft.com/india/windows/internet-explorer/ ("Add on":http://www.bhelpuri.net/Trixie/)
+ * "Safari":http://www.apple.com/safari/ ("Add on":http://8-p.info/greasekit/).
 
 2.  Once you have one of the above browsers ready to run Userscripts.  You can
-click on this
-"here:"http://github.com/neskie/secwepemc-facebook/blob/master/secwepemctsin-fb.user.js.
-to install the script.
+click "here:"http://github.com/neskie/secwepemc-facebook/blob/master/secwepemctsin-fb.user.js.  to install the script.
 
 
 3.  Work your way to "Facebook":http://www.facebookc.om, and some of the text should be translated.
