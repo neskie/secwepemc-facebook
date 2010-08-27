@@ -1,0 +1,31 @@
+Secwepemc Facebook
+
+A Greasemonkey Userscript to alter Facebook to display words
+in Secwepemctsin.
+
+Greasemonkey scripts allow you to alter web pages in many different ways.  We
+are altering the website so that words in Facebook are in Secwepemctsin.  How
+do you say "What are you planning?" in Secwepemctsín or how do you say "News
+Feed"?  I'm still looking for words to translate.  Some words will be hard like
+"Privacy" or "Contributor".  When we get all of the Facebook interface
+translated, Facebook will be another place we can be immersed in the language.
+
+Installation
+
+1. You will need a browser with the ability to run Greasemonky Userscripts.
+This includes "Firefox":http://www.mozilla.com/en-US/firefox/firefox.html ("Add
+on":https://addons.mozilla.org/firefox/addon/748), "Google
+Chrome":http://www.google.com/chrome (No Add on required), "Internet
+Explorer":http://www.microsoft.com/india/windows/internet-explorer/ ("Add
+on":http://www.bhelpuri.net/Trixie/), and "Safari":http://www.apple.com/safari/
+("Add on":http://8-p.info/greasekit/).
+
+2.  Once you have one of the above browsers ready to run Userscripts.  You can
+click on this
+"here:"http://github.com/neskie/secwepemc-facebook/blob/master/secwepemctsin-fb.user.js.
+to install the script.
+
+
+3.  Work your way to "Facebook":http://www.facebookc.om, and some of the text should be translated.
+
+4. Enjoy Facebook in Secwepemctsín.  Also check out "First Voices":http://www.firstvoices.ca and "Secwepemctsnem":http://language.secwepemcradio.ath.cx for more language resources.  There is also "Land of the Shuswap":http://www.landoftheshuswap.com/.
