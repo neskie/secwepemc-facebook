@@ -1,6 +1,6 @@
-// Secwepemc Facebook! example user script
+// Secwepemc Facebook!
 // version 0.1 BETA!
-// 2005-04-25
+// 2010-08-25
 // Copyright (c) 2010, Neskie Manuel
 // Released under the GPL license
 // http://www.gnu.org/copyleft/gpl.html
@@ -14,7 +14,7 @@
 // Accept the default configuration and install.
 //
 // To uninstall, go to Tools/Manage User Scripts,
-// select "Secwepemctsin Google", and click Uninstall.
+// select "Secwepemctsin Facebook", and click Uninstall.
 //
 // --------------------------------------------------------------------
 //
@@ -25,24 +25,25 @@
 // @include       http://www.facebook.com/*
 // ==/UserScript==
 
-var gbarlinks = document.getElementsByTagName('a');
+var es = new Array();
+es["Home"] = "Tsitcw";
+es["News Feed"] = "Lexeyem";
+es["Friends"] = "Kweselkten";
 
+var fbelem = document.getElementsByTagName('a');
 
-for (var i=0; i < gbarlinks.length; i++){
-  var thisElem = gbarlinks[i];
- if (thisElem.textContent =="Home"){
-	  thisElem.textContent = 'Tsitcw';
- }
+for (var i = 0; i < fbelem.length; i++) {
+    var thisElem = fbelem[i];
+    if (es[thisElem.textContent]) {
+        thisElem.textContent = es[thisElem.textContent];
+    }
 }
-var gbarlinks = document.getElementsByTagName('span');
 
+var fbelem = document.getElementsByTagName('span');
 
-for (var i=0; i < gbarlinks.length; i++){
-  var thisElem = gbarlinks[i];
- if (thisElem.textContent =="News Feed"){
-	  thisElem.textContent = 'Lexeyem';
- }
- if (thisElem.textContent =="Friends"){
-	  thisElem.textContent = 'Kweséltken';
- }
+for (var i = 0; i < fbelem.length; i++) {
+    var thisElem = fbelem[i];
+    if (es[thisElem.textContent]) {
+        thisElem.textContent = es[thisElem.textContent];
+    }
 }
