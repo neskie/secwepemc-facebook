@@ -34,7 +34,7 @@ var fbelem = document.getElementsByTagName('a');
 
 for (var i = 0; i < fbelem.length; i++) {
     var thisElem = fbelem[i];
-    if (es[thisElem.textContent]) {
+    if (thisElem.textContent in es) {
         thisElem.textContent = es[thisElem.textContent];
     }
 }
@@ -43,7 +43,7 @@ var fbelem = document.getElementsByTagName('span');
 
 for (var i = 0; i < fbelem.length; i++) {
     var thisElem = fbelem[i];
-    if (es[thisElem.textContent]) {
+    if (thisElem.textContent in es) {
         thisElem.textContent = es[thisElem.textContent];
     }
 }
