@@ -29,21 +29,136 @@ var es = new Array();
 es["Home"] = "Tsitcw";
 es["News Feed"] = "Lexeyem";
 es["Friends"] = "Kweselkten";
+es["Like"] = "Xwexwisten";
+es[" likes this."] = " r xwexwistes.";
+es["Today"] = "Pyin Te Sitqt";
+es["Say hello."] = "Say weytk.";
+es["Say hi."] = "Say weytk.";
+es["Tomorrow"] = "Pexwéyt";
+es["What are you planning?"] = "Me7 Stemi7 Ke7 Tsuwet?";
 
-var fbelem = document.getElementsByTagName('a');
+function loadSecwepemc() {
+	var fbelem = document.getElementsByTagName('a');
 
-for (var i = 0; i < fbelem.length; i++) {
-    var thisElem = fbelem[i];
-    if (thisElem.textContent in es) {
-        thisElem.textContent = es[thisElem.textContent];
-    }
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+	    }
+	}
+
+	var fbelem = document.getElementsByTagName('span');
+
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+		thisElem.addEventListener( "load", loadSecwepemc, false );  // capture phase
+
+	    }
+	}
+
+	var fbelem = document.getElementsByClassName('ego_social_context');
+
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+	    }
+	}
+
+	var fbelem = document.getElementsByTagName('input');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.getAttribute('placeholder') in es) {
+		thisElem.setAttribute('placeholder',es[thisElem.getAttribute('placeholder')]);
+	    }
+	    if (thisElem.getAttribute('value') in es) {
+		thisElem.setAttribute('value',es[thisElem.getAttribute('value')]);
+	    }
+	}
+
+	var fbelem = document.getElementsByTagName('h3');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+		thisElem.addEventListener( "click", loadSecwepemc(), false );  // capture phase
+	    }
+	}
+
+	var fbelem = document.getElementsByTagName('h2');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		icon = thisElem.childNodes[0]
+		thisElem.textContent = es[thisElem.textContent];
+		thisElem.appendChild(icon)
+	    }
+	}
 }
 
-var fbelem = document.getElementsByTagName('span');
+loadSecwepemc();
 
-for (var i = 0; i < fbelem.length; i++) {
-    var thisElem = fbelem[i];
-    if (thisElem.textContent in es) {
-        thisElem.textContent = es[thisElem.textContent];
-    }
+function changedNode(e) {
+	var fbelem = e.target.getElementsByTagName('a');
+
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		thisElem.textContent = es[thisElem.textContent];
+		    	    }
+		}
+
+	var fbelem = e.target.getElementsByTagName('span');
+
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		thisElem.textContent = es[thisElem.textContent];
+		    		thisElem.addEventListener( "load", loadSecwepemc, false );  // capture phase
+		    
+		    	    }
+		}
+
+	var fbelem = e.target.getElementsByClassName('ego_social_context');
+
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		thisElem.textContent = es[thisElem.textContent];
+		    	    }
+		}
+
+	var fbelem = e.target.getElementsByTagName('input');
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.getAttribute('placeholder') in es) {
+		    		thisElem.setAttribute('placeholder',es[thisElem.getAttribute('placeholder')]);
+		    	    }
+		    if (thisElem.getAttribute('value') in es) {
+		    		thisElem.setAttribute('value',es[thisElem.getAttribute('value')]);
+		    	    }
+		}
+
+	var fbelem = e.target.getElementsByTagName('h3');
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		thisElem.textContent = es[thisElem.textContent];
+		    		thisElem.addEventListener( "click", loadSecwepemc(), false );  // capture phase
+		    	    }
+		}
+
+	var fbelem = e.target.getElementsByTagName('h2');
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		icon = thisElem.childNodes[0]
+		    		thisElem.textContent = es[thisElem.textContent];
+		    		thisElem.appendChild(icon)
+		    	    }
+		}
 }
+
+document.addEventListener('DOMNodeInserted', changedNode, false);
