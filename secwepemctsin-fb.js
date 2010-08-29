@@ -36,6 +36,7 @@ es["Say hello."] = "Say weytk.";
 es["Say hi."] = "Say weytk.";
 es["Tomorrow"] = "Pexwéyt";
 es["What are you planning?"] = "Me7 Stemi7 Ke7 Tsuwet?";
+es["What are you thinking?"] = "Stemi7 ke7 petínesme?";
 
 function loadSecwepemc() {
 	var fbelem = document.getElementsByTagName('a');
