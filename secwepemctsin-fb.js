@@ -35,8 +35,10 @@ es["Today"] = "Pyin Te Sitqt";
 es["Say hello."] = "Say weytk.";
 es["Say hi."] = "Say weytk.";
 es["Tomorrow"] = "Pexwéyt";
-es["What are you planning?"] = "Me7 Stemi7 Ke7 Tsuwet?";
-es["What are you thinking?"] = "Stemi7 ke7 petínesme?";
+es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
+es["Where?"] = "T̓hé7e?";
+es["Who's invited?"] = "Swéti7?";
+es["What's on your mind?"] = "Stém̓i ke7 petínesme?";
 
 function loadSecwepemc() {
 	var fbelem = document.getElementsByTagName('a');
@@ -54,8 +56,6 @@ function loadSecwepemc() {
 	    var thisElem = fbelem[i];
 	    if (thisElem.textContent in es) {
 		thisElem.textContent = es[thisElem.textContent];
-		thisElem.addEventListener( "load", loadSecwepemc, false );  // capture phase
-
 	    }
 	}
 
@@ -76,6 +76,20 @@ function loadSecwepemc() {
 	    }
 	    if (thisElem.getAttribute('value') in es) {
 		thisElem.setAttribute('value',es[thisElem.getAttribute('value')]);
+	    }
+	}
+
+	var fbelem = document.getElementsByTagName('textarea');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.getAttribute('placeholder') in es) {
+		thisElem.setAttribute('placeholder',es[thisElem.getAttribute('placeholder')]);
+	    }
+	    if (thisElem.getAttribute('title') in es) {
+		thisElem.setAttribute('title',es[thisElem.getAttribute('title')]);
+	    }
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
 	    }
 	}
 
@@ -141,6 +155,19 @@ function changedNode(e) {
 		    		thisElem.setAttribute('value',es[thisElem.getAttribute('value')]);
 		    	    }
 		}
+	var fbelem = document.getElementsByTagName('textarea');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.getAttribute('placeholder') in es) {
+		thisElem.setAttribute('placeholder',es[thisElem.getAttribute('placeholder')]);
+	    }
+	    if (thisElem.getAttribute('title') in es) {
+		thisElem.setAttribute('title',es[thisElem.getAttribute('title')]);
+	    }
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+	    }
+	}
 
 	var fbelem = e.target.getElementsByTagName('h3');
 	for (var i = 0; i < fbelem.length; i++) {
