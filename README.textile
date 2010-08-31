@@ -22,7 +22,7 @@ This includes:
 
 2.  Once you have one of the above browsers ready to run Userscripts.  To install, click "here":http://github.com/downloads/neskie/secwepemc-facebook/secwepemctsin-fb.user.js. 
 
-
 3.  Work your way to "Facebook":http://www.facebookc.om, and some of the text should be translated.
+    !/downloads/neskie/secwepemc-facebook/SecwepemcFacebook.png!
 
 4. Enjoy Facebook in Secwepemctsín.  Also check out "First Voices":http://www.firstvoices.ca and "Secwepemctsnem":http://language.secwepemcradio.ath.cx for more language resources.  There is also "Land of the Shuswap":http://www.landoftheshuswap.com/.
