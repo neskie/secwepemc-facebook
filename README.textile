@@ -20,8 +20,7 @@ This includes:
  * "Internet Explorer":http://www.microsoft.com/india/windows/internet-explorer/ ("Add on":http://www.bhelpuri.net/Trixie/)
  * "Safari":http://www.apple.com/safari/ ("Add on":http://8-p.info/greasekit/).
 
-2.  Once you have one of the above browsers ready to run Userscripts.  You can
-click "here:"http://github.com/neskie/secwepemc-facebook/blob/master/secwepemctsin-fb.user.js.  to install the script.
+2.  Once you have one of the above browsers ready to run Userscripts.  To install, click "here":http://github.com/downloads/neskie/secwepemc-facebook/secwepemctsin-fb.user.js. 
 
 
 3.  Work your way to "Facebook":http://www.facebookc.om, and some of the text should be translated.
