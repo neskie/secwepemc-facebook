@@ -30,13 +30,13 @@ es["Home"] = "Tsitcw";
 es["News Feed"] = "Lexeyem";
 es["Friends"] = "Kweselkten";
 es["Like"] = "Xwexwisten";
-es[" likes this."] = " r xwexwistes.";
 es["Today"] = "Pyin Te Sitqt";
 es["Say hello."] = "Say weytk.";
 es["Say hi."] = "Say weytk.";
 es["Tomorrow"] = "Pexwéyt";
 es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
 es["Where?"] = "T̓hé7e?";
+es["See All"] = "Wikts r Xwexweyt";
 es["Who's invited?"] = "Swéti7?";
 es["What's on your mind?"] = "Stém̓i ke7 petínesme?";
 
@@ -93,6 +93,28 @@ function loadSecwepemc() {
 	    }
 	}
 
+	var fbelem = document.getElementsByClassName('UIImageBlock_Content UIImageBlock_ICON_Content');
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    //finds if one person likes this.
+	    if (thisElem.textContent.match('likes this.')){
+		icon = thisElem.childNodes[0]
+		link = thisElem.childNodes[1]
+		link.textContent = link.textContent.replace('likes this.', 'r xwexwistes.');
+		thisElem.textContent = '';
+		thisElem.appendChild(icon);
+		thisElem.appendChild(link);
+	    }
+	    if (thisElem.textContent.match('like this.')){
+		icon = thisElem.childNodes[0]
+		link = thisElem.childNodes[1]
+		link.textContent = link.textContent.replace('like this.', 'r xwexwistep.');
+		thisElem.textContent = '';
+		thisElem.appendChild(icon);
+		thisElem.appendChild(link);
+	    }
+	}
+
 	var fbelem = document.getElementsByTagName('h3');
 	for (var i = 0; i < fbelem.length; i++) {
 	    var thisElem = fbelem[i];
@@ -108,7 +130,7 @@ function loadSecwepemc() {
 	    if (thisElem.textContent in es) {
 		icon = thisElem.childNodes[0]
 		thisElem.textContent = es[thisElem.textContent];
-		thisElem.appendChild(icon)
+		thisElem.appendChild(icon);
 	    }
 	}
 }
@@ -155,7 +177,7 @@ function changedNode(e) {
 		    		thisElem.setAttribute('value',es[thisElem.getAttribute('value')]);
 		    	    }
 		}
-	var fbelem = document.getElementsByTagName('textarea');
+	var fbelem = e.target.getElementsByTagName('textarea');
 	for (var i = 0; i < fbelem.length; i++) {
 	    var thisElem = fbelem[i];
 	    if (thisElem.getAttribute('placeholder') in es) {
@@ -169,12 +191,32 @@ function changedNode(e) {
 	    }
 	}
 
+//	var fbelem = e.target.getElementsByClassName('UIImageBlock_Content UIImageBlock_ICON_Content');
+//	for (var i = 0; i < fbelem.length; i++) {
+//	    var thisElem = fbelem[i];
+//	    //finds if one person likes this.
+//	    if (thisElem.textContent.match('likes this.')){
+//		icon = thisElem.childNodes[0]
+//		link = thisElem.childNodes[1]
+//		link.textContent = link.textContent.replace('likes this.', 'r xwexwistes.');
+//		thisElem.textContent = '';
+//		thisElem.appendChild(icon);
+//		thisElem.appendChild(link);
+ //	    }
+//	    if (thisElem.textContent.match('like this.')){
+//		    cnodes = thisElem.childNodes;
+//		    for (var j = 0; j < cnodes.length; j++){
+//			    cnode = cnodes[j];
+//			    thisElem.appendChild(cnode);
+//		    }
+//	    }
+//	}
+
 	var fbelem = e.target.getElementsByTagName('h3');
 	for (var i = 0; i < fbelem.length; i++) {
 		    var thisElem = fbelem[i];
 		    if (thisElem.textContent in es) {
 		    		thisElem.textContent = es[thisElem.textContent];
-		    		thisElem.addEventListener( "click", loadSecwepemc(), false );  // capture phase
 		    	    }
 		}
 
@@ -184,7 +226,7 @@ function changedNode(e) {
 		    if (thisElem.textContent in es) {
 		    		icon = thisElem.childNodes[0]
 		    		thisElem.textContent = es[thisElem.textContent];
-		    		thisElem.appendChild(icon)
+		    		thisElem.appendChild(icon);
 		    	    }
 		}
 }
