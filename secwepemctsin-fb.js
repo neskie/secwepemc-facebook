@@ -30,34 +30,39 @@ es["Home"] = "Tsitcw";
 es["News Feed"] = "Lexeyem";
 es["Friends"] = "Kweselkten";
 es["Like"] = "Xwexwisten";
-es["Today"] = "Pyin Te Sitqt";
+es["Female"] = "Núxwenxw";
+es["Male"] = "Sqélemcw";
 es["Say hello."] = "Say weytk.";
 es["Say hi."] = "Say weytk.";
 es["Tomorrow"] = "Pexwéyt";
 es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
 es["Where?"] = "T̓hé7e?";
+es["Mobile Phone"] = "K̓woyí7se	T̓e Xqweltálkweten";
+es["Phone"] = "Xqweltálkweten";
 es["See All"] = "Wikts r Xwexweyt";
 es["Who's invited?"] = "Swéti7?";
 es["What's on your mind?"] = "Stém̓i ke7 petínesme?";
+es["October"] = "Pesllwélsten";
+es["This Month"] = "Yi7éne r megce";
+
+function alter_tag(tag) {
+	var fbelem = document.getElementsByTagName(tag);
+
+	for (var i = 0; i < fbelem.length; i++) {
+	    var thisElem = fbelem[i];
+	    if (thisElem.textContent in es) {
+		thisElem.textContent = es[thisElem.textContent];
+	    }
+	}
+}
 
 function loadSecwepemc() {
-	var fbelem = document.getElementsByTagName('a');
 
-	for (var i = 0; i < fbelem.length; i++) {
-	    var thisElem = fbelem[i];
-	    if (thisElem.textContent in es) {
-		thisElem.textContent = es[thisElem.textContent];
-	    }
-	}
-
-	var fbelem = document.getElementsByTagName('span');
-
-	for (var i = 0; i < fbelem.length; i++) {
-	    var thisElem = fbelem[i];
-	    if (thisElem.textContent in es) {
-		thisElem.textContent = es[thisElem.textContent];
-	    }
-	}
+	alter_tag('a')
+	alter_tag('th')
+	alter_tag('td')
+	alter_tag('span')
+	alter_tag('h3')
 
 	var fbelem = document.getElementsByClassName('ego_social_context');
 
@@ -120,7 +125,6 @@ function loadSecwepemc() {
 	    var thisElem = fbelem[i];
 	    if (thisElem.textContent in es) {
 		thisElem.textContent = es[thisElem.textContent];
-		thisElem.addEventListener( "click", loadSecwepemc(), false );  // capture phase
 	    }
 	}
 
@@ -147,13 +151,21 @@ function changedNode(e) {
 		    	    }
 		}
 
+	var fbelem = e.target.getElementsByTagName('th');
+
+	for (var i = 0; i < fbelem.length; i++) {
+		    var thisElem = fbelem[i];
+		    if (thisElem.textContent in es) {
+		    		thisElem.textContent = es[thisElem.textContent];
+		    	    }
+		}
+
 	var fbelem = e.target.getElementsByTagName('span');
 
 	for (var i = 0; i < fbelem.length; i++) {
 		    var thisElem = fbelem[i];
 		    if (thisElem.textContent in es) {
 		    		thisElem.textContent = es[thisElem.textContent];
-		    		thisElem.addEventListener( "load", loadSecwepemc, false );  // capture phase
 		    
 		    	    }
 		}
@@ -211,14 +223,6 @@ function changedNode(e) {
 //		    }
 //	    }
 //	}
-
-	var fbelem = e.target.getElementsByTagName('h3');
-	for (var i = 0; i < fbelem.length; i++) {
-		    var thisElem = fbelem[i];
-		    if (thisElem.textContent in es) {
-		    		thisElem.textContent = es[thisElem.textContent];
-		    	    }
-		}
 
 	var fbelem = e.target.getElementsByTagName('h2');
 	for (var i = 0; i < fbelem.length; i++) {
