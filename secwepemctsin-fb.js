@@ -47,6 +47,8 @@ es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
 es["Where?"] = "T̓hé7e?";
 es["Mobile Phone"] = "K̓woyí7se	T̓e Xqweltálkweten";
 es["Phone"] = "Xqweltálkweten";
+es["Children:"] = "Stsmelt:";
+es["Birthday:"] = "Me7 Le7es Ke Sitqt:";
 es["See All"] = "Wikts r Xwexweyt";
 es["Who's invited?"] = "Swéti7?";
 es["What's on your mind?"] = "Stém̓i ke7 petínesme?";
@@ -64,14 +66,9 @@ function translate_tag(tag) {
 	}
 }
 
-function loadSecwepemc() {
-	translate_tag('a');
-	translate_tag('th');
-	translate_tag('td');
-	translate_tag('span');
-	translate_tag('h3');
-
-	var fbelem = document.getElementsByClassName('ego_social_context');
+//Basic Tag altering.
+function translate_class(classname) {
+	var fbelem = document.getElementsByClassName(classname);
 
 	for (var i = 0; i < fbelem.length; i++) {
 	    var thisElem = fbelem[i];
@@ -79,6 +76,17 @@ function loadSecwepemc() {
 		thisElem.textContent = es[thisElem.textContent];
 	    }
 	}
+}
+
+function loadSecwepemc() {
+	translate_tag('a');
+	translate_tag('th');
+	translate_tag('td');
+	translate_tag('span');
+	translate_tag('h3');
+	translate_tag('dt');
+
+	translate_class('ego_social_context');
 
 	var fbelem = document.getElementsByTagName('input');
 	for (var i = 0; i < fbelem.length; i++) {
@@ -146,15 +154,9 @@ function changedNode(e) {
 	translate_tag('td');
 	translate_tag('span');
 	translate_tag('h3');
+	translate_tag('dt');
 
-	var fbelem = e.target.getElementsByClassName('ego_social_context');
-
-	for (var i = 0; i < fbelem.length; i++) {
-		    var thisElem = fbelem[i];
-		    if (thisElem.textContent in es) {
-		    		thisElem.textContent = es[thisElem.textContent];
-		    	    }
-		}
+	translate_class('ego_social_context');
 
 	var fbelem = e.target.getElementsByTagName('input');
 	for (var i = 0; i < fbelem.length; i++) {
