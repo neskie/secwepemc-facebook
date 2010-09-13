@@ -25,16 +25,24 @@
 // @include       http://www.facebook.com/*
 // ==/UserScript==
 
+//Array of words to change.
 var es = new Array();
 es["Home"] = "Tsitcw";
+es["No"] = "Tá7a";
+es["Yes"] = "Mé7e";
+es["Maybe"] = "Héqe";
 es["News Feed"] = "Lexeyem";
 es["Friends"] = "Kweselkten";
 es["Like"] = "Xwexwisten";
+es["Books"] = "Speqpeqwél̓tcw";
 es["Female"] = "Núxwenxw";
 es["Male"] = "Sqélemcw";
 es["Say hello."] = "Say weytk.";
 es["Say hi."] = "Say weytk.";
+es["on Friday."] = "ne Stselkstésq̓t.";
+es["on Saturday."] = "ne Stekmekstesq̓t.";
 es["Tomorrow"] = "Pexwéyt";
+es["Today"] = "Pyin Te Sitqt";
 es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
 es["Where?"] = "T̓hé7e?";
 es["Mobile Phone"] = "K̓woyí7se	T̓e Xqweltálkweten";
@@ -45,9 +53,9 @@ es["What's on your mind?"] = "Stém̓i ke7 petínesme?";
 es["October"] = "Pesllwélsten";
 es["This Month"] = "Yi7éne r megce";
 
-function alter_tag(tag) {
+//Basic Tag altering.
+function translate_tag(tag) {
 	var fbelem = document.getElementsByTagName(tag);
-
 	for (var i = 0; i < fbelem.length; i++) {
 	    var thisElem = fbelem[i];
 	    if (thisElem.textContent in es) {
@@ -57,12 +65,11 @@ function alter_tag(tag) {
 }
 
 function loadSecwepemc() {
-
-	alter_tag('a')
-	alter_tag('th')
-	alter_tag('td')
-	alter_tag('span')
-	alter_tag('h3')
+	translate_tag('a');
+	translate_tag('th');
+	translate_tag('td');
+	translate_tag('span');
+	translate_tag('h3');
 
 	var fbelem = document.getElementsByClassName('ego_social_context');
 
@@ -98,35 +105,27 @@ function loadSecwepemc() {
 	    }
 	}
 
-	var fbelem = document.getElementsByClassName('UIImageBlock_Content UIImageBlock_ICON_Content');
-	for (var i = 0; i < fbelem.length; i++) {
-	    var thisElem = fbelem[i];
-	    //finds if one person likes this.
-	    if (thisElem.textContent.match('likes this.')){
-		icon = thisElem.childNodes[0]
-		link = thisElem.childNodes[1]
-		link.textContent = link.textContent.replace('likes this.', 'r xwexwistes.');
-		thisElem.textContent = '';
-		thisElem.appendChild(icon);
-		thisElem.appendChild(link);
-	    }
-	    if (thisElem.textContent.match('like this.')){
-		icon = thisElem.childNodes[0]
-		link = thisElem.childNodes[1]
-		link.textContent = link.textContent.replace('like this.', 'r xwexwistep.');
-		thisElem.textContent = '';
-		thisElem.appendChild(icon);
-		thisElem.appendChild(link);
-	    }
-	}
-
-	var fbelem = document.getElementsByTagName('h3');
-	for (var i = 0; i < fbelem.length; i++) {
-	    var thisElem = fbelem[i];
-	    if (thisElem.textContent in es) {
-		thisElem.textContent = es[thisElem.textContent];
-	    }
-	}
+//	var fbelem = document.getElementsByClassName('UIImageBlock_Content UIImageBlock_ICON_Content');
+//	for (var i = 0; i < fbelem.length; i++) {
+//	    var thisElem = fbelem[i];
+//	    //finds if one person likes this.
+//	    if (thisElem.textContent.match('likes this.')){
+//		icon = thisElem.childNodes[0]
+//		link = thisElem.childNodes[1]
+//		link.textContent = link.textContent.replace('likes this.', 'r xwexwistes.');
+//		thisElem.textContent = '';
+//		thisElem.appendChild(icon);
+//		thisElem.appendChild(link);
+//	    }
+//	    if (thisElem.textContent.match('like this.')){
+//		icon = thisElem.childNodes[0]
+//		link = thisElem.childNodes[1]
+//		link.textContent = link.textContent.replace('like this.', 'r xwexwistep.');
+//		thisElem.textContent = '';
+//		thisElem.appendChild(icon);
+//		thisElem.appendChild(link);
+//	    }
+//	}
 
 	var fbelem = document.getElementsByTagName('h2');
 	for (var i = 0; i < fbelem.length; i++) {
@@ -142,33 +141,11 @@ function loadSecwepemc() {
 loadSecwepemc();
 
 function changedNode(e) {
-	var fbelem = e.target.getElementsByTagName('a');
-
-	for (var i = 0; i < fbelem.length; i++) {
-		    var thisElem = fbelem[i];
-		    if (thisElem.textContent in es) {
-		    		thisElem.textContent = es[thisElem.textContent];
-		    	    }
-		}
-
-	var fbelem = e.target.getElementsByTagName('th');
-
-	for (var i = 0; i < fbelem.length; i++) {
-		    var thisElem = fbelem[i];
-		    if (thisElem.textContent in es) {
-		    		thisElem.textContent = es[thisElem.textContent];
-		    	    }
-		}
-
-	var fbelem = e.target.getElementsByTagName('span');
-
-	for (var i = 0; i < fbelem.length; i++) {
-		    var thisElem = fbelem[i];
-		    if (thisElem.textContent in es) {
-		    		thisElem.textContent = es[thisElem.textContent];
-		    
-		    	    }
-		}
+	translate_tag('a');
+	translate_tag('th');
+	translate_tag('td');
+	translate_tag('span');
+	translate_tag('h3');
 
 	var fbelem = e.target.getElementsByClassName('ego_social_context');
 
