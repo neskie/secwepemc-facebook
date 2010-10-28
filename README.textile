@@ -10,6 +10,8 @@ Feed"?  I'm still looking for words to translate.  Some words will be hard like
 "Privacy" or "Contributor".  When we get all of the Facebook interface
 translated, Facebook will be another place we can be immersed in the language.
 
+It would be good to be able to use the official Facebook "Translations App":http://www.facebook.com/translations/, but Secwepemctsín isn't listed.  Until then, we can use this script.
+
 Installation
 
 1. You will need a browser with the ability to run Greasemonky Userscripts.

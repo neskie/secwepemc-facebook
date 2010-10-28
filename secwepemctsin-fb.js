@@ -43,6 +43,7 @@ es["on Friday."] = "ne Stselkstésq̓t.";
 es["on Saturday."] = "ne Stekmekstesq̓t.";
 es["Tomorrow"] = "Pexwéyt";
 es["Today"] = "Pyin Te Sitqt";
+es["Yesterday"] = "Le pexwéyt";
 es["What are you planning?"] = "Me7 Stém̓i ke7 tsuwet?";
 es["Where?"] = "T̓hé7e?";
 es["Mobile Phone"] = "K̓woyí7se	T̓e Xqweltálkweten";
